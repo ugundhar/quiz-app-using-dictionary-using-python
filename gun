@@ -1,0 +1,54 @@
+# create a quiz app by using dictionary
+q1 = """
+what is your name??
+a.ramu
+b.janani
+c.jhansi
+d.ravi
+"""
+q2 = """
+what is student current age??
+a.17
+b.18
+c.19
+d.20
+"""
+q3 = """
+what is gender??
+a.male
+b.female
+c.transgender
+d.gay
+"""
+q4 = """
+what is cibel score??
+a.750
+b.770
+c.780
+d.7980
+"""
+
+dict = {q1: "a", q2: "b", q3: "c", q4: "d"}
+name = str(input("please enter your name:"))
+print("welcome", name, "to the bonus quiz")
+print()
+score = 0
+for i in dict:
+    print(i)
+    flag = input("Do you want to skip this question?? (yes/no):")
+    if flag == "y":
+        continue
+
+    user = input("Chose the correct option (a/b/c/d):")
+    if user == dict[i]:
+        print("your answer is correct 1 mark added in your score")
+        score = score + 1
+        print(score)
+    else:
+        print("you entered wrong answer -1 is reduced form your score")
+        score = score - 1
+        print(score)
+    flag1 = input("you u wnat to quit the quiz (y/n):")
+    if flag1 == "y":
+        break
+print("your final score is:", score)
